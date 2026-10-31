@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love ❤️</title>
+  <style>
+    :root {
+      --primary-color: #8b0000;
+      --secondary-color: #b76e79;
+      --bg-color: #fff0f3;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe6ea 0%, #fff0f3 100%);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px 20px;
+      box-shadow: 0 10px 30px rgba(139, 0, 0, 0.15);
+      border: 1px solid rgba(183, 110, 121, 0.3);
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: var(--secondary-color);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .music-container {
+      margin-bottom: 20px;
+    }
+
+    .music-btn {
+      background: linear-gradient(45deg, #b76e79, #8b0000);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-title {
+      color: var(--primary-color);
+      font-size: 16px;
+      margin: 15px 0 10px 0;
+      font-weight: 600;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .photo-card {
+      background: white;
+      padding: 8px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border: 1px solid #f0cfd5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .upload-btn {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      font-size: 10px;
+      padding: 5px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .shayari-box {
+      background: linear-gradient(135deg, #8b0000 0%, #600000 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 15px rgba(139, 0, 0, 0.25);
+    }
+
+    .shayari-text {
+      font-size: 15px;
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    .action-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      padding: 12px;
+      border-radius: 25px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+
+    .btn-accept {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .btn-party {
+      background-color: #ff4081;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .custom-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      max-width: 350px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      animation: popIn 0.3s ease;
+    }
+
+    .modal-content h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .modal-content p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .modal-close-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 8px 25px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .heart {
+      position: fixed;
+      color: #ff4d6d;
+      font-size: 20px;
+      animation: float 4s linear infinite;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Happy Birthday, My Everything! ❤️</h1>
+    <p class="subtitle">A Special Birthday Gift For You ✨</p>
+
+    <!-- Music Player -->
+    <div class="music-container">
+      <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Romantic Song</button>
+      <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=romantic-guitars-112174.mp3" type="audio/mp3">
+      </audio>
+    </div>
+
+    <!-- Shayari Section -->
+    <div class="shayari-box">
+      <p class="shayari-text">
+        "Khata ho gayi ho toh maaf kar dena,<br>
+        Dil apna bilkul saaf kar dena.<br>
+        Raho chahe jitna bhi naraz humse,<br>
+        Par birthday par yeh muskaan toh tohfe mein dena!" ❤️
+      </p>
+    </div>
+
+    <!-- Single Photo Gallery Grid -->
+    <div class="gallery-title">✨ Memories & Beautiful Smiles ✨</div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <img id="img1" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80" alt="Photo 1">
+        <label for="file1" class="upload-btn">📷 Change Photo</label>
+        <input type="file" id="file1" accept="image/*" style="display:none" onchange="previewImage(event, 'img1')">
+      </div>
+
+      <div class="photo-card">
+        <img id="img2" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&q=80" alt="Photo 2">
+        <label for="file2" class="upload-btn">📷 Change Photo</label>
+        <input type="file" id="file2" accept="image/*" style="display:none" onchange="previewImage(event, 'img2')">
+      </div>
+
+      <div class="photo-card">
+        <img id="img3" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&q=80" alt="Photo 3">
+        <label for="file3" class="upload-btn">📷 Change Photo</label>
+        <input type="file" id="file3" accept="image/*" style="display:none" onchange="previewImage(event, 'img3')">
+      </div>
+
+      <div class="photo-card">
+        <img id="img4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80" alt="Photo 4">
+        <label for="file4" class="upload-btn">📷 Change Photo</label>
+        <input type="file" id="file4" accept="image/*" style="display:none" onchange="previewImage(event, 'img4')">
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-btns">
+      <button class="btn btn-accept" onclick="showModal('Shukriya! ❤️', 'Yay! Aapki narazgi khatam hone ka shukriya. Meri zindagi mein aane ke liye aur mujhe maaf karne ke liye thank you so much! 😊')">Haan, Maaf Kiya! 😊</button>
+      <button class="btn btn-party" onclick="showModal('Happy Birthday! 🎉', 'Aaj ka din aapke liye bohat khas hai! May all your dreams come true! ✨🎂')">Chalo, Party Karte Hain! 🎂</button>
+    </div>
+  </div>
+
+  <div class="custom-modal" id="msgModal">
+    <div class="modal-content">
+      <h3 id="modalTitle">Header</h3>
+      <p id="modalBody">Message text</p>
+      <button class="modal-close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function showModal(title, text) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalBody').innerText = text;
+      document.getElementById('msgModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('msgModal').style.display = 'none';
+    }
+
+    function toggleMusic() {
+      var audio = document.getElementById("bgMusic");
+      var btn = document.getElementById("musicBtn");
+
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.innerHTML = "⏸️ Pause Song";
+        }).catch(e => {
+          alert("Music play karne ke liye button par click karein.");
+        });
+      } else {
+        audio.pause();
+        btn.innerHTML = "🎵 Play Romantic Song";
+      }
+    }
+
+    function previewImage(event, imgId) {
+      var reader = new FileReader();
+      reader.onload = function() {
+        var output = document.getElementById(imgId);
+        output.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
+</body>
+</html>
